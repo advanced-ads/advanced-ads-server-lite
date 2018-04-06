@@ -37,6 +37,13 @@ Using JavaScript could be a bit more flexible, but the call could be blocked by 
 </script>
 ```
 
+When the ad server is installed on a different domain, this method works in browsers supporting CORS https://caniuse.com/#feat=cors
+Define the 'ADVANCED_ADS_ALLOWED_HTTP_ORIGINS' constant in wp-config.php to allow incoming requests from specified origins, for example:
+```
+define( 'ADVANCED_ADS_ALLOWED_HTTP_ORIGINS', array( 'http://test.test' ) );
+```
+where `http://test.test` is the domain where you would like to place ads.
+
 == Changelog ==
 
 = 0.1 =
