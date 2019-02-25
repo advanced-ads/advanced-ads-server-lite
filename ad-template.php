@@ -9,5 +9,5 @@ header("X-Robots-Tag: noindex,nofollow");
 
 	    echo Advanced_Ads_Select::get_instance()->get_ad_by_id( array( 'id' => get_the_ID() ) );
 	?></div>
-    ?></body>
+    </body>
 </html>
