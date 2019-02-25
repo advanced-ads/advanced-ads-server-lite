@@ -77,3 +77,29 @@ function advanced_ads_show_url_below_title( $post ){
 	
 	printf( __( 'Ad-URL: %s', 'advanced-ads-server-lite' ), $input );
 }
+
+/**
+ * Add allowed HTTP origins.
+ *
+ * @param array $origins Allowed HTTP origins.
+ * @return array $origins Allowed HTTP origins.
+ */
+add_filter( 'allowed_http_origins', 'advanced_ads_add_allowed_origins' );
+function advanced_ads_add_allowed_origins( $origins ) {
+	if ( defined( 'ADVANCED_ADS_ALLOWED_HTTP_ORIGINS' ) ) {
+		$origins = array_merge( $origins, (array) ADVANCED_ADS_ALLOWED_HTTP_ORIGINS );
+	}
+	return $origins;
+}
+
+
+/**
+ * Send Access-Control-Allow-Origin and related headers.
+ */
+add_action( 'wp', 'advanced_ads_send_origin_headers' );
+function advanced_ads_send_origin_headers() {
+	if ( get_query_var( 'post_type' ) === 'advanced_ads'
+		&& ! headers_sent() ) {
+		send_origin_headers();
+	}
+}
