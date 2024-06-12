@@ -4,7 +4,7 @@
  * Advanced Ads Server Lite
  *
  * @package   Advanced_Ads
- * @author    Thomas Maier <thomas.maier@webgilde.com>
+ * @author    Thomas Maier, Advanced Ads GmbH <support@wpadvancedads.com>
  * @license   GPL-2.0+
  * @link      https://wpadvancedads.com
  * @copyright 2013-2018 Thomas Maier, webgilde GmbH
